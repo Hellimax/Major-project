@@ -11,12 +11,10 @@ def generate(n_images):
     except:
         print("Folder already exsist")
 
-
-
     raw_data_path = "./data/"
     folder_list = list(os.walk(raw_data_path))[0][1]
     count = 0
-    for j in range(4,16):#for no: characters in image
+    for j in range(2,8):#for no: characters in image
         for i in range(int(n_images)): # no: of images
             folder_no = np.random.randint(0,len(folder_list))
             img_list = list(os.walk(raw_data_path+folder_list[folder_no]))[0][2]
@@ -33,7 +31,7 @@ def generate(n_images):
             count = count+1
             if count%100==0:
                 print(str(count)+" images done")
-
+            img = cv2.line(img,(3,5),(img.shape[1]-2,5),(0,0,0),2) #drawing line over the letters 
             mimg.imsave("./temp_data/"+name+".png",img)
     augmentor.augment()
     os.system("rm -r temp_data")
