@@ -12,7 +12,7 @@ def augment():
 
     augmentor = k_img.ImageDataGenerator(
         rotation_range=2,
-        height_shift_range=0.3,
+        height_shift_range=0.1,
         brightness_range=[0.5,1.5],
         zoom_range=0.05
     )
