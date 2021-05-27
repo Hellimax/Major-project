@@ -11,7 +11,7 @@ def generate(n_images):
     except:
         print("Folder already exsist")
 
-    raw_data_path = "./data/"
+    raw_data_path = "./hindi_data/"
     folder_list = list(os.walk(raw_data_path))[0][1]
     count = 0
     for j in range(2,8):#for no: characters in image
