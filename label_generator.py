@@ -12,7 +12,7 @@ def generate_labels():
 
     blank = cv2.imread("./blank.png")
     train_len = int((len(img_list)*80)/100)
-    with open("./Att_ocr/data/index_to_char.json","r") as f:
+    with open("./data/index_to_char.json","r") as f:
         index_to_char = json.load(f)
     
     print(len(img_list))
