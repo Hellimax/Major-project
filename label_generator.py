@@ -23,6 +23,7 @@ def generate_labels():
             img = cv2.imread("./train_data/"+img_list[i])
             while img.shape[1]!=max_len_image:
                 img = np.concatenate((img,blank),axis=1)
+            cv2.imwrite("./train_data/"+img_list[i],img)
             label = ""
             for j in range(len(img_name)-1):
                 label = label+index_to_char[img_name[j]]
@@ -37,6 +38,7 @@ def generate_labels():
             img = cv2.imread("./train_data/"+img_list[i])
             while img.shape[1]!=max_len_image:
                 img = np.concatenate((img,blank),axis=1)
+            cv2.imwrite("./train_data/"+img_list[i],img)
             label = ""
             for j in range(len(img_name)-1):
                 label = label+index_to_char[img_name[j]]
