@@ -32,6 +32,9 @@ def generate_labels():
             
             file.write("./train_data/"+img_list[i]+" "+label+"\n")
 
+            if i%1000==0:
+                print(str(i)+" train images done")
+
     with open("test_labels.txt","w") as file:
         for i in range(train_len,len(img_list)):
             img_name = img_list[i].split("_")
@@ -46,7 +49,8 @@ def generate_labels():
                 label = label+(max_char_len-(len(img_name)-1))*"@"
             
             file.write("./train_data/"+img_list[i]+" "+label+"\n")
-
+            if i%1000==0:
+                print(str(i)+" test images done")
 
 
 if __name__=="__main__":

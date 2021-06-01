@@ -29,7 +29,7 @@ def generate(n_images):
                 img = np.concatenate((img,img2),axis = 1)
                 name = name+folder_list[folder_no]+"_"
             count = count+1
-            if count%100==0:
+            if count%1000==0:
                 print(str(count)+" images done")
             img = cv2.line(img,(3,5),(img.shape[1]-2,5),(0,0,0),2) #drawing line over the letters 
             mimg.imsave("./temp_data/"+name+".png",img)

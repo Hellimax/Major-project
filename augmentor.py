@@ -24,7 +24,7 @@ def augment():
             image = next(result)[0].astype('uint8')
             cv2.imwrite("./train_data/"+i,image)
         count = count+1
-        if count%100==0:
+        if count%1000==0:
             print(str(count)+" images augmented")
 
 
