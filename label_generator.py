@@ -11,10 +11,11 @@ def generate_labels():
     max_len_image = cv2.imread("./train_data/"+max_len_image).shape[1]
 
     blank = cv2.imread("./blank.png")
-    train_len = int((len(img_list)*95)/100)
+    train_len = int((len(img_list)*80)/100)
     with open("./data/index_to_char.json","r") as f:
         index_to_char = json.load(f)
     
+    print(len(img_list))
     
 
     with open("train_labels.txt","w") as file:
@@ -32,9 +33,6 @@ def generate_labels():
             
             file.write("./train_data/"+img_list[i]+" "+label+"\n")
 
-            if i%1000==0:
-                print(str(i)+" train images done")
-
     with open("test_labels.txt","w") as file:
         for i in range(train_len,len(img_list)):
             img_name = img_list[i].split("_")
@@ -49,8 +47,7 @@ def generate_labels():
                 label = label+(max_char_len-(len(img_name)-1))*"@"
             
             file.write("./train_data/"+img_list[i]+" "+label+"\n")
-            if i%1000==0:
-                print(str(i)+" test images done")
+
 
 
 if __name__=="__main__":
